@@ -1,0 +1,39 @@
+
+@color-white: #fff;
+@url: "../images"; //变量在字符串中  可以在字符串中写成@{url}
+@height: height; //变量作为属性  写成  @[height]
+.pos(@position:absolute;@left:auto;@right;auto;@top:auto;@bottom:auto;@zIndex:0) {
+  //没传参 就是默认值
+  position: @position;
+  left: @left;
+  right: @right;
+  top: @top;
+  bottom: @bottom;
+  z-index: @zIndex;
+}
+
+.transition(@property:all;@duration:1s;@timing-function:ease;@delay:0s){
+  /*-webkit-transition:@property  @duration @timing-function @delay;
+  -moz-transition:@property  @duration @timing-function @delay;
+  -ms-transition:@property  @duration @timing-function @delay;
+  -o-transition:@property  @duration @timing-function @delay;
+  transition:@property  @duration @timing-function @delay;*/
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments ;
+  -ms-transition: @arguments ;
+  -o-transition: @arguments ;
+  transition: @arguments ;
+}
+.css3(@k,@v) {
+  -webkit-@{k}: @v;
+  -moz-@{k}: @v;
+  -ms-@{k}: @v;
+  -o-@{k}: @v;
+    @{k}: @v;
+}
+.opacity(@val:1){
+  @result:@val*100;
+  opacity: @val;
+  filter:~"alpha(opacity = @{result})";
+}
+

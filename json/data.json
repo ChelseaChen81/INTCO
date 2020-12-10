@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "picImg": "../img/pro1.png",
+    "title": "Black Belmont Frame With Mat"
+  },
+  {
+    "id": 2,
+    "picImg":  "../img/pro2.png",
+    "title": "White Frame With Decoration"
+  },
+  {
+    "id": 3,
+    "picImg": "../img/pro3.png",
+    "title": "Black And Golden Bridge"
+  },
+  {
+    "id": 4,
+    "picImg":  "../img/pro4.png",
+    "title": "Colorful Opium On The Wall"
+  },
+  {
+    "id": 5,
+    "picImg":  "../img/pro5.png",
+    "title": "Summer Dream With White Leaves"
+
+  },
+  {
+    "id": 6,
+    "picImg":  "../img/pro6.png",
+    "title": "Abstract Art Is The Best"
+
+  }
+]

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>INTCO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+    <link rel="stylesheet/less" href="../css/index.less">
+    <script src="../css/less (1).js"></script>
+    <link rel="stylesheet" href="../css/swiper-4.3.3.min.css">
+
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="Home.html">
+            <img src="../img/logo.png"  height="60">
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="Home.html">
+                Home
+            </a>
+
+            <a class="navbar-item" href="Products.html">
+                Products
+            </a>
+            <a class="navbar-item" href="Shop.html">
+                Shop
+            </a>
+            <a class="navbar-item" href="ContactUs.html">
+                Contact Us
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-primary" href="SignUp.html">
+                        <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light" href="LogIn.html">
+                        Log in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-fullhd">
+
+    <div class="columns">
+        <div style="width:20%;margin:5% auto 0 auto">
+            <p style="text-align:center;font-size:24px;font-weight:bold;margin-bottom:30px;">Inspiration</p>
+
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column is-half" ><img src="../img/list1.png" ></div>
+        <div class="column is-half" ><img src="../img/list2.png" ></div>
+    </div>
+    <div class="columns">
+        <div class="column is-half"><img src="../img/list3.png" ></div>
+        <div class="column is-half"><img src="../img/list4.png" ></div>
+    </div>
+
+
+    <div class="columns" >
+        <div style="width:20%;margin:5% auto 0 auto">
+            <p style="text-align:center;font-size:24px;font-weight:bold;margin-bottom:30px;">Best Sellers</p>
+
+        </div>
+    </div>
+
+    <div style="width:100%;">
+        <div style="text-align: center;">
+            <ul class="products" id="products" style="display:inline;" >
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="columns">
+        <div style="width:20%;margin:5% auto 0 auto">
+            <p style="text-align:center;font-size:24px;font-weight:bold;">You may like</p>
+
+        </div>
+    </div>
+
+
+
+    <div class="columns">
+        <div  id="photo1" class="photo1 " >
+            <div id="bottomPhoto" class="bottomPhoto swiper-container" style="width:1200px;">
+                <ul class="swiper-wrapper" >
+                    <li class="swiper-slide" style="width:350px;height:320px;"><img src="../img/A1.png" alt=""></li>
+                    <li class="swiper-slide" style="width:350px;height:320px;"><img src="../img/A2.png" alt=""></li>
+                    <li class="swiper-slide" style="width:350px;height:320px;"><img src="../img/A3.png" alt=""></li>
+                    <li class="swiper-slide" style="width:350px;height:320px;"><img src="../img/A4.png" alt=""></li>
+                    <li class="swiper-slide" style="width:350px;height:320px;"><img src="../img/A5.png" alt=""></li>
+                    <li class="swiper-slide" style="width:350px;height:320px;"><img src="../img/A6.png" alt=""></li>
+                    <li class="swiper-slide" style="width:350px;height:320px;"><img src="../img/A7.png" alt=""></li>
+                    <li class="swiper-slide" style="width:350px;height:320px;"><img src="../img/A8.png" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="columns">
+        <div class="column is-full">
+            <img src="../img/ditu.png" ></div>
+
+    </div>
+
+</div>
+
+<footer >
+    <div class="content has-text-centered">
+        <div class="columns">
+            <div class="column is-full"> <div   style="width:10%;margin:3% auto 0 auto"><img src="../img/logo.png"></div></div>
+        </div>
+        <div class="columns">
+            <div class="column is-full"><div   style="width:8%;margin:0 auto"> <img src="../img/footericon.png"></div></div>
+        </div>
+
+        <p>
+            <strong>INTCO</strong> by <a href="https://jgthms.com">Xi Chen</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="../js/jquery-3.2.1.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/animate.js"></script>
+<!--<script src="../js/index.js"></script>-->
+<script src="../js/swiper-4.3.3.min.js"></script>
+
+<script src="../js/JSmengqian.js"></script>
+
+<script>
+    let products = document.getElementsByClassName("products")[0];
+    let list = products.getElementsByTagName("li");
+    console.log(list);
+    let data = null;
+    let data1 = null;
+
+    let xhr = new XMLHttpRequest();
+    let xhr1 = new XMLHttpRequest();
+    xhr.open("get", "../json/data.json", false);
+    xhr1.open("get", "../json/data1.json", false);
+
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            data = JSON.parse(xhr.responseText);
+
+        }
+    };
+    xhr1.onreadystatechange = function () {
+        if (xhr1.readyState == 4 && xhr1.status == 200) {
+            data1 = JSON.parse(xhr1.responseText);
+        }
+    };
+    xhr.send(null);
+    xhr1.send(null);
+    console.log(data);
+    console.log(data1);
+
+    bindHTML(data);
+
+    function bindHTML(data) {
+        let str = ``;
+        data.forEach((item) => {
+            str += `
+       <li><img src="" realImg="${item.picImg}" alt=""  style="opacity:0">
+                <p>${item.title}</p></li>
+        `
+        });
+        products.innerHTML = str;
+
+    }
+
+    let product = document.getElementById("products");
+    let lists = product.getElementsByTagName("li");
+    console.log(lists);
+    window.onscroll = function () {
+        console.log(2);
+        let winH = $.win("clientHeight");
+        let olist = [...lists];
+        let scrollH = winH + $.win("scrollTop");//一屏高度加卷出去高度
+        console.log($.win("scrollTop"));
+        olist.forEach((item, index) => {
+            let liPos = item.offsetHeight + $.offset(item).top;
+            //console.log(liPos);
+            //如果scrollH>=imgPos 可以加载真实图片
+            if (scrollH >= liPos) {
+                console.log(666);
+                loadImg(item.children[0]);
+            }
+        });
+    };
+
+
+    function loadImg(images) {
+//创建img标签 把真实的图片路径赋值给img标签，让其在后台加载
+        //当图片加载成功以后，再显示在页面上
+        if (images.loaded) return;
+        let tempImg = new Image();//document.createElement("img")
+        tempImg.src = images.getAttribute("realImg");//把真实图片路径赋值给创建的图片的src
+        //  console.log(tempImg.src);
+        tempImg.onload = function () {//加载成功触发事件
+            images.src = this.src;//在页面上显示真实的图片
+            images.loaded = true;//已加载标识，防止重复加载
+
+            images.parentNode.style.width = "31%";
+            images.parentNode.style.display = "inline-block";
+
+            let timer = setInterval(() => {
+                let op = Number(images.style.opacity);
+                op += 0.2;
+                console.log(op);
+                if (op >= 1) {
+                    clearInterval(timer);
+                    images.style.opacity = 1;
+                    return
+                }
+                images.style.opacity = op;
+            }, 400)
+            images.parentNode.style.height = images.offsetHeight + "px";
+
+        };
+        tempImg.onerror = function () {//加载失败触发事件
+            images.loaded = true;//已加载标识，防止重复加载
+        }
+
+    }
+</script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerGroup: 1,
+        slidesPerView: "auto",
+        loop: true,
+        autoplay: {
+            delay: 2000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+        }
+    });
+</script>
+</html>
